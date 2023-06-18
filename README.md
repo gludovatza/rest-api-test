@@ -10,6 +10,7 @@
 ## About project
 
 https://www.toptal.com/laravel/restful-laravel-api-tutorial
+Még jobb: https://www.laravelia.com/post/laravel-10-custom-api-authentication-tutorial
 
 ## About Laravel
 
