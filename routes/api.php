@@ -16,11 +16,7 @@ use App\Http\Controllers\API\AuthController;
 |
 */
 
-Route::get('articles', [ArticleController::class,'index']);
-Route::get('articles/{article}', [ArticleController::class,'show']);
-Route::post('articles', [ArticleController::class,'store']);
-Route::put('articles/{article}', [ArticleController::class,'update']);
-Route::delete('articles/{article}', [ArticleController::class,'delete']);
+
 
 Route::post('register', [AuthController::class, 'register']);
 Route::post('login', [AuthController::class, 'login']);
@@ -32,4 +28,9 @@ Route::group(['middleware' => ['auth:api']], function () {
         return $request->user();
     });
 
+    Route::get('articles', [ArticleController::class,'index']);
+    Route::get('articles/{article}', [ArticleController::class,'show']);
+    Route::post('articles', [ArticleController::class,'store']);
+    Route::put('articles/{article}', [ArticleController::class,'update']);
+    Route::delete('articles/{article}', [ArticleController::class,'delete']);
 });
