@@ -16,6 +16,8 @@ class AuthController extends Controller
         $user->name = $request->name;
         $user->email = $request->email;
         $user->password = bcrypt($request->password);
+        if($request->password != $request->password_confirmation)
+            return abort(400);
         $user->save();
 
         return $user;
